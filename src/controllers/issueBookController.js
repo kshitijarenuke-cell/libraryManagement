@@ -1,7 +1,7 @@
 const express=require('express');
 const IssueBook=require('../models/IssueBook');
 
-issueBook=async (request,response)=>{
+const issueBook = async (request, response) => {
     try{
         const {bookId,bookName,studentId,studentName,issueDate,dueDate}=request.body;
 
@@ -44,7 +44,7 @@ issueBook=async (request,response)=>{
     }
 };
 
-returnBook=async (request,response)=>{
+const returnBook = async (request, response) => {
     try{
         const issueBook=await IssueBook.findById(request.params.id);
 
@@ -68,4 +68,4 @@ returnBook=async (request,response)=>{
     }
     }
 
-    module.exports={issueBook:returnBook};
+module.exports = { issueBook, returnBook };

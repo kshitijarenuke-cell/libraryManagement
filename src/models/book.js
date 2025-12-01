@@ -1,7 +1,6 @@
-const { type } = require("os");
-const { title } = require("process");
+const mongoose = require("mongoose");
 
-const bookSchema = {
+const bookSchema = new mongoose.Schema({
 
     title:{
         type:String,
@@ -29,8 +28,8 @@ const bookSchema = {
         enum:["available"," not available"],
         default:"available"
     },
-    createdAt:{type:Date,default:Date.now},
-    }
-  
-    const Book=mongoose.model('book',bookSchema);
+    createdAt:{type:Date,default:Date.now}
+});
+
+const Book = mongoose.model('book', bookSchema);
     module.exports={Book};

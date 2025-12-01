@@ -1,6 +1,6 @@
 //bookController is used for handling requests related to books. It exports functions that can be called by other parts of the application.
 
- const Book = require('./src/models/book');
+const Book = require('../models/book');
 const Books = [];
  
 const getAllBooks = async(request, response) => {    //getAllBooks function is used to retrieve all books from an array and send them back in JSON format.
